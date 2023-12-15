@@ -22,5 +22,16 @@ A aplicação opera em linha de comando e aceita como input o texto que o usuár
    python3 main.py 
    ```
 
+
+### Consideração importante (caso não esteja utilizando MacOS)
+Se der erro na função `text_to_speech`, mude a linha da função:
+```
+os.system(
+        f"open {audio_file}"
+    )  # 'start' para Windows, use 'open' para MacOS ou 'xdg-open' para Linux
+```
+
+para `os.system(f"start {audio_file}")`. Isso será necessário caso você esteja utilizando Windows.
+
 ## Explicação do código
 Uma explicação detalhada de cada linha de código pode ser encontrada nos comentários acima de cada linha. 
